@@ -13,6 +13,9 @@ CURL_OPTIONS=""
 
 CONFIG_FILE=~/.telebotrc
 
+TELEBOTAPIURL="https://api.telegram.org"
+
+
 if [ -e $CONFIG_FILE ] ; then
         source $CONFIG_FILE
 fi
@@ -33,8 +36,12 @@ case $i in
 		TOKEN="${i#*=}"
 		shift
 		;;
+	-R|--read=*)
+		READMESSAGES=1
+		shift
+		;;
 	-h|--help)
-		echo "Usage: $0 [-c=|-chatid=<CHATID>] [-t=|--token=<TOKEN>]"
+		echo "Usage: $0 [-c=|-chatid=<CHATID>] [-t=|--token=<TOKEN>] [-R|--read]"
 		exit 0
 		;;
 	*)
@@ -44,23 +51,38 @@ case $i in
 done
 
 
+if [ -z "$TOKEN" ] ; then
+	echo "Incomplete configuration"
+	echo "\$TOKEN missing"
+	exit 1
+fi
+
+if [ -n "$READMESSAGES" ] ; then
+	URL="$TELEBOTAPIURL/bot$TOKEN/getupdates"
+	$CURL $CURL_OPTIONS $URL
+	exit 0
+fi
+
+
 if [ $# -eq 0 ] ; then
 #	No text on comand line
 	exit 0
 fi
 
-if [ -z "$CHATID" ] || [ -z "$TOKEN" ] ; then
+if [ -z "$CHATID" ] ; then
 	echo "Incomplete configuration"
-	echo "\$CHATID and \$TOKEN required. Check $CONFIG_FILE"
+	echo "\$CHATID required. Check $CONFIG_FILE"
 	exit 1
 fi
+
+
 
 if [ "$#" -lt 1 ] ; then
 	echo "Usage: $0 <text to post>"
 	exit 1
 fi
 
-URL="https://api.telegram.org/bot$TOKEN/sendMessage"
+URL="$TELEBOTAPIURL/bot$TOKEN/sendMessage"
 TEXT="$1"
 #echo "Sending message"
 $CURL $CURL_OPTIONS -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT" $URL > /dev/null

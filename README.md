@@ -1,13 +1,14 @@
-#@telebot.sh
-#A simple script to sent telegram messages
+#telebot.sh
+
+##A simple script to sent telegram messages
 
 telebot.sh is wirtten with minimal dependancies in mind. It requres only curl and bash to operate
 
-##Installation
+#Installation
 
 Just clone the repo to a detination, make telebot.sh executable
 
-##Configuration
+#Configuration
 In order to operate, telebot.sh needs at least Telegram Bot token (ask BotFather for one). In order to send messages, it will need a "chat id".
 
 telebot.sh will read a config file (~/.telebotrc) for the following configuration variables
@@ -16,7 +17,7 @@ telebot.sh will read a config file (~/.telebotrc) for the following configuratio
 - (optional) TELEBOTAPIURL -- basic api url instead of http://api.telegram.org
 - (optional) CURL_OPTIONS -- any extra options you want curl to use
 
-##Usage
+#Usage
 
 Usage help is available with --help command line switch
 

@@ -1,6 +1,6 @@
 # telebot.sh
 
-## A simple script to sent telegram messages
+## A simple script to send telegram messages
 
 telebot.sh is wirtten with minimal dependancies in mind. It requres only curl and bash to operate
 

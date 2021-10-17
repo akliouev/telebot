@@ -6,7 +6,7 @@ telebot.sh is wirtten with minimal dependancies in mind. It requres only curl an
 
 # Installation
 
-Just clone the repo to a detination, make telebot.sh executable
+Just clone the repo to a destination, make telebot.sh executable
 
 # Configuration
 In order to operate, telebot.sh needs at least Telegram Bot token (ask BotFather for one). In order to send messages, it will need a "chat id".
@@ -27,4 +27,4 @@ telebot.sh --token=<TOKEN> --chatid=<CHATID> <message to be send>
 To get the latest updates for the bot:
 telebot.sh --token=<TOKEN> --read
 
-This will dump a JSON structure with the latest updates for the given bot token
+This will dump a JSON structure with the latest updates for the given bot token. Useful to fiure out chat ids

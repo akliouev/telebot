@@ -4,7 +4,7 @@
 
 telebot.sh is wirtten with minimal dependancies in mind. It requres only curl and bash to operate
 
-#Installation
+# Installation
 
 Just clone the repo to a detination, make telebot.sh executable
 

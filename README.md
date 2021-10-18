@@ -1,4 +1,4 @@
-# telebot.sh
+## telebot.sh
 
 ## A simple script to send telegram messages
 
@@ -22,9 +22,12 @@ telebot.sh will read a config file (~/.telebotrc) for the following configuratio
 Usage help is available with --help command line switch
 
 To sent a message:
-telebot.sh --token=<TOKEN> --chatid=<CHATID> <message to be send>
-
+```sh
+telebot.sh --token=<TOKEN> --chatid=<CHATID> "<message to be send>"
+```
 To get the latest updates for the bot:
+```sh
 telebot.sh --token=<TOKEN> --read
+```
 
 This will dump a JSON structure with the latest updates for the given bot token. Useful to fiure out chat ids

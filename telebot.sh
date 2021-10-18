@@ -8,10 +8,11 @@ if [ -z ${USER+} ] ; then
 fi
 
 CURL="/usr/bin/curl"
+
 #CURL_OPTIONS="--socks5-hostname 127.0.0.1:9050 --silent"
 CURL_OPTIONS=""
 
-CONFIG_FILE=~/.telebotrc
+CONFIG_FILE=$HOME/.telebotrc
 
 TELEBOTAPIURL="https://api.telegram.org"
 

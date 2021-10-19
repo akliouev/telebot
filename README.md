@@ -13,7 +13,7 @@ In order to operate, telebot.sh needs at least Telegram Bot token (ask BotFather
 
 telebot.sh will read a config file (~/.telebotrc) for the following configuration variables
 - TOKEN -- Bot token
-- CHATID -- Numeric chatid
+- CHATID -- Numeric chat id
 - (optional) TELEBOTAPIURL -- basic api url instead of http://api.telegram.org
 - (optional) CURL_OPTIONS -- any extra options you want curl to use
 
@@ -30,4 +30,4 @@ To get the latest updates for the bot:
 telebot.sh --token=<TOKEN> --read
 ```
 
-This will dump a JSON structure with the latest updates for the given bot token. Useful to fiure out chat ids
+This will dump a JSON structure with the latest updates for the given bot token. Useful to figure out chat ids
